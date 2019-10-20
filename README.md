@@ -78,7 +78,7 @@
    ## Installing Clover  
        
    ***Download CloverISO-xx.tar.lzma***      
-   https://github.com/Dids/clover-builder/releases            
+      https://github.com/CloverHackyColor/CloverBootloader/releases  
    Extract it then extract the iso as well and copy the EFI folder to the empty EFI partition    
    <img src="pict/2019-09-11_12-26.png" width=700>  
         
