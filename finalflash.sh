@@ -6,8 +6,8 @@ RED="\033[1;31m"
 NOCOLOR="\033[0m"
 YELLOW="\033[01;33m"
 if [[ $EUID -ne 0 ]]; then
-echo -e "${RED}THIS SCRIPT MUST BE RUN AS ROOT${NOCOLOR}" 
-exit 1
+   echo -e "${RED}THIS SCRIPT MUST BE RUN AS ROOT${NOCOLOR}" 
+   exit 1
 fi
 echo -e "${YELLOW}WE NEED TO INSTALL SOME IMPORTANT TOOLS TO PROCEED${NOCOLOR}"
 dnf install dmg2img 
@@ -36,11 +36,13 @@ select choice in "${lines[@]}"; do
 break # valid choice was made; exit prompt.
 done
 
-# Split the chosen line into ID number.
+# Split the chosen line into ID and serial number.
 read -r id sn unused <<<"$choice"
+set +e
 echo -e "${YELLOW}COPYING base.iso TO USB-DRIVE${NOCOLOR}"
 umount $(echo /dev/$id)2
 sleep 2s
+set -e
 dd bs=4M if=base.iso of=/dev/$id status=progress oflag=sync
 sleep 5s
 rm -rf base.iso
