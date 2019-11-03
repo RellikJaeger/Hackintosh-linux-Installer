@@ -6,8 +6,8 @@ RED="\033[1;31m"
 NOCOLOR="\033[0m"
 YELLOW="\033[01;33m"
 if [[ $EUID -ne 0 ]]; then
-   echo -e "${RED}THIS SCRIPT MUST BE RUN AS ROOT${NOCOLOR}" 
-   exit 1
+echo -e "${RED}THIS SCRIPT MUST BE RUN AS ROOT${NOCOLOR}" 
+exit 1
 fi
 echo -e "${YELLOW}WE NEED TO INSTALL SOME IMPORTANT TOOLS TO PROCEED${NOCOLOR}"
 dnf install dmg2img 
