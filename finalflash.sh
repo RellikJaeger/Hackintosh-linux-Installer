@@ -36,8 +36,9 @@ select choice in "${lines[@]}"; do
 break # valid choice was made; exit prompt.
 done
 
-# Split the chosen line into ID and serial number.
+# Split the chosen line into ID number.
 read -r id sn unused <<<"$choice"
+echo -e "${YELLOW}COPYING base.iso TO USB-DRIVE${NOCOLOR}"
 umount $(echo /dev/$id)2
 sleep 2s
 dd bs=4M if=base.iso of=/dev/$id status=progress oflag=sync
@@ -73,3 +74,6 @@ rm -rf OpenCore-0.5.2-RELEASE.zip
 umount $(echo /dev/$id)2 
 mount $(echo /dev/$id)2 /mnt
 echo -e "${YELLOW}INSTALLATION FINISHED, OPEN /mnt AND EDIT OC FOR YOUR MACHINE${NOCOLOR}"
+
+# Special thanks to Scooby-Chan for helping writing the script and testing. 
+# and ill slap your face for testing as well.
