@@ -49,7 +49,7 @@
    <img src="pict/novo6.png" width=700>  
      
    Once done applying changes righ click on your new EFI partition and hit `Manage Flags`  
-   <img src="pict/novo7" width=700>   
+   <img src="pict/novo7.png" width=700>   
      
    Select boot and esp  
    <img src="pict/novo3.png" width=700>      
@@ -99,11 +99,7 @@
    https://github.com/corpnewt/Hackintosh-Guide/blob/master/config.plist-basics.md   
         
   This shoud be enough to boot into the installer GOOD Luck!!  
-        
-  [![Video](https://github.com/Broly1/Hackintosh-linux-Installer/blob/master/pict/novo.png)](https://youtu.be/DDJka-Ykzn8 "Video")
 
-
-        
         
    ## All Credits to:
    **CorpNewt algrey Shannee XLNC.**        
