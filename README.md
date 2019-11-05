@@ -52,7 +52,7 @@
    <img src="pict/novo7" width=700>   
      
    Select boot and esp  
-   <img src="pict/novo3.png" width=700>    
+   <img src="pict/novo3.png" width=700>      
       
    ***Now whe need to mount the EFI partition***  
    The easiet way is to open up `Disks` again and mount it that way     
