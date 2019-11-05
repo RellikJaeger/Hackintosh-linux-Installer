@@ -36,36 +36,23 @@
   <img src="pict/2019-09-11_12-54.png" width=700>  
  
   Once it is done restoring the iso open up `Gparted` and select your usb-drive.  
-  <img src="pict/2019-09-11_11-39.png" width=700>   
+  <img src="pict/2019-09-11_11-39.png" width=700>  
+  
  
-  Rigth click on the macOS partition and hit resize/move  
-  <img src="pict/2019-09-11_11-54.png" width=700>   
+  Rigth click in the unallocated space hit new      
+  <img src="pict/novo.png" width=700>   
   
-   Give it `200MB` of space make sure you hit the `+` for it to work :) and hit Resise/Move  
-   It will move the whole hfs+ partition to the right and give us 200MB free space for our EFI partition.     
-     
-   <img src="pict/2019-09-11_11-56.png" width=700>   
-  
-   Do not forget to hit apply, This will take a long time sit tight.     
-   <img src="pict/2019-09-11_11-58.png" width=700>   
+  In File system select `fat32` and in lable type `EFI`  
+   <img src="pict/novo2.png" width=700>  
    
-   Right click on your new 200MB unallocated space.   
-   <img src="pict/2019-09-11_12-08.png" width=700>  
-     
-   Hit New  
-   <img src="pict/2019-09-11_12-09.png" width=700>  
-     
-   In File System set it to `fat32` and in Label `EFI`         
-   <img src="pict/2019-09-11_12-12.png" width=700>  
-     
    Hit apply again   
-   <img src="pict/2019-09-11_12-13.png" width=700>  
+   <img src="pict/novo6.png" width=700>  
      
    Once done applying changes righ click on your new EFI partition and hit `Manage Flags`  
-   <img src="pict/2019-09-11_12-15.png" width=700>   
+   <img src="pict/novo7" width=700>   
      
    Select boot and esp  
-   <img src="pict/2019-09-11_12-16.png" width=700>    
+   <img src="pict/novo3.png" width=700>    
       
    ***Now whe need to mount the EFI partition***  
    The easiet way is to open up `Disks` again and mount it that way     
