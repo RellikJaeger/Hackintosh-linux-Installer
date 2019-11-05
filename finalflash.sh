@@ -58,12 +58,12 @@ done
 # Split the chosen line into ID and serial number.
 read -r id sn unused <<<"$choice"
  
-echo -e "${YELLOW}UMOUNTING DEVICE AND COPYING base.iso TO USB-DRIVE!${NOCOLOR}"
+echo -e "${YELLOW}COPYING base.iso TO USB-DRIVE!${NOCOLOR}" 
+dd bs=4M if=base.iso of=/dev/$id status=progress oflag=sync
+
 umount $(echo /dev/$id)2 || :
 sleep 5s
- 
-dd bs=4M if=base.iso of=/dev/$id status=progress oflag=sync
-sleep 5s
+
 rm -rf base.iso
 
 # Create EFI partition for clover or opencore
