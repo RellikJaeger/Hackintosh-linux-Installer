@@ -2,18 +2,36 @@
 
 # This script is inteded to be a linux version of 'Makeinstall.py" there for it should be executerd 
 # from same directory /home/user/Downloads/gibMacOS-master/
+
 RED="\033[1;31m"
 NOCOLOR="\033[0m"
 YELLOW="\033[01;33m"
+set -e
+# Checking for root
 if [[ $EUID -ne 0 ]]; then
 echo -e "${RED}THIS SCRIPT MUST BE RUN AS ROOT${NOCOLOR}" 
 exit 1
 fi
+# Installing dmg2img
 echo -e "${YELLOW}WE NEED TO INSTALL SOME IMPORTANT TOOLS TO PROCEED${NOCOLOR}"
-dnf install dmg2img 
+
+# Identifying distro
+source /etc/os-release
+
+if [[ $ID = "ubuntu" ]]; then
 apt install dmg2img
-# Extracting the iso file with dmg2img
-set -e
+
+elif [[ $ID = "fedora" ]]; then
+dnf install dmg2img
+
+elif [[ $ID = "Arch Linux" ]]; then
+pacman -S dmg2img
+else
+echo -e "${RED}YOUR DISTRO IS NOT SUPPORTED!!${NOCOLOR}"
+exit 1 
+fi
+
+# Extracting the iso file with dmg2img 
 if cd "$(dirname "$(find ./ -name "BaseSystem.dmg")")"
 then echo -e "${YELLOW}EXTRACTING base.iso FROM BaseSystem.dmg!${NOCOLOR}"
 sleep 3s
@@ -22,6 +40,7 @@ else
 echo -e "${RED}BaseSystem.dmg NOT FOUND DOWNNLOAD IT AND TRY AGAIN!${NOCOLOR}"
 exit 1
 fi
+
 # Print disk devices
 # Read command output line by line into array ${lines [@]}
 # Bash 3.x: use the following instead:
@@ -38,20 +57,21 @@ done
 
 # Split the chosen line into ID and serial number.
 read -r id sn unused <<<"$choice"
-set +e
-echo -e "${YELLOW}COPYING base.iso TO USB-DRIVE${NOCOLOR}"
-umount $(echo /dev/$id)2
-sleep 2s
-set -e
+ 
+echo -e "${YELLOW}UMOUNTING DEVICE AND COPYING base.iso TO USB-DRIVE!${NOCOLOR}"
+umount $(echo /dev/$id)2 || :
+sleep 5s
+ 
 dd bs=4M if=base.iso of=/dev/$id status=progress oflag=sync
 sleep 5s
 rm -rf base.iso
+
 # Create EFI partition for clover or opencore
 fdisk /dev/$id <<EOF
 n
 2
 
-+210M
+
 t
 2
 1
@@ -59,15 +79,17 @@ t
 w
 EOF
 sleep 5s
+
 # Format the EFI partition for clover or opencore
-# and mount it in the /mnt
-set +e
+# and mount it in the /mnt 
 mkfs.fat -F 32 $(echo /dev/$id)2
-umount $(echo /dev/$id)2
+umount $(echo /dev/$id)2 || :
 mount -t vfat  $(echo /dev/$id)2 /mnt/ -o rw,umask=000
 sleep 5s 
-set -e
+ 
 # Install opencore
+echo -e "${YELLOW}INSTALLING OpenCore!!${NOCOLOR}"
+sleep 3s
 wget https://files.amd-osx.com/OpenCore-0.5.2-RELEASE.zip
 chmod +x OpenCore-0.5.2-RELEASE.zip
 unzip OpenCore-0.5.2-RELEASE.zip -d /mnt/
