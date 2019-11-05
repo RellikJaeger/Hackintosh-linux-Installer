@@ -45,7 +45,7 @@
   In File system select `fat32` and in lable type `EFI`  
    <img src="pict/novo2.png" width=700>  
    
-   Hit apply again   
+   Hit apply     
    <img src="pict/novo6.png" width=700>  
      
    Once done applying changes righ click on your new EFI partition and hit `Manage Flags`  
