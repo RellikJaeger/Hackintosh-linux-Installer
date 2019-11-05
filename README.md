@@ -56,7 +56,7 @@
       
    ***Now whe need to mount the EFI partition***  
    The easiet way is to open up `Disks` again and mount it that way     
-   <img src="pict/2019-09-11_12-18.png" width=700>   
+   <img src="pict/novo8.png" width=700>    
       
    Now you should see an empty EFI partition in your file system  
        
