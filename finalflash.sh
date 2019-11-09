@@ -9,7 +9,7 @@ YELLOW="\033[01;33m"
 set -e
 # Checking for root
 if [[ $EUID -ne 0 ]]; then
-echo -e "${RED}THIS SCRIPT MUST BE RUN AS ROOT${NOCOLOR}" 
+echo -e "${RED}THIS SCRIPT MUST RUN AS ROOT${NOCOLOR}" 
 exit 1
 fi
 # Installing dmg2img
