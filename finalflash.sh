@@ -13,19 +13,19 @@ echo -e "${RED}THIS SCRIPT MUST BE RUN AS ROOT${NOCOLOR}"
 exit 1
 fi
 # Installing dmg2img
-echo -e "${YELLOW}WE NEED TO INSTALL SOME IMPORTANT TOOLS TO PROCEED${NOCOLOR}"
+echo -e "\e[3mWE NEED TO INSTALL SOME IMPORTANT TOOLS TO PROCEED!\e[0m"
 
 # Identifying distro
 source /etc/os-release
 
 if [[ $ID = "ubuntu" ]]; then
-apt install dmg2img
+apt install dmg2img > /dev/null 2>&1
 
 elif [[ $ID = "fedora" ]]; then
-dnf install dmg2img
+dnf install dmg2img > /dev/null 2>&1
 
 elif [[ $ID = "Arch Linux" ]]; then
-pacman -S dmg2img
+pacman -S dmg2img > /dev/null 2>&1
 else
 echo -e "${RED}YOUR DISTRO IS NOT SUPPORTED!!${NOCOLOR}"
 exit 1 
@@ -33,9 +33,9 @@ fi
 
 # Extracting the iso file with dmg2img 
 if cd "$(dirname "$(find ./ -name "BaseSystem.dmg")")"
-then echo -e "${YELLOW}EXTRACTING base.iso FROM BaseSystem.dmg!${NOCOLOR}"
+then echo -e "\e[3mEXTRACTING base.iso FROM BaseSystem.dmg!\e[0m"
 sleep 3s
-dmg2img BaseSystem.dmg base.iso
+dmg2img BaseSystem.dmg base.iso 
 else 
 echo -e "${RED}BaseSystem.dmg NOT FOUND DOWNNLOAD IT AND TRY AGAIN!${NOCOLOR}"
 exit 1
@@ -48,56 +48,55 @@ fi
 readarray -t lines < <(lsblk --nodeps -no name,size | grep "sd")
 
 # Prompt the user to select one of the lines.
-echo -e "${RED}WARNING!!! SELECTING THE WRONG DISK MAY WIPE YOUR PC AND ALL DATA DO IT AT YOUR OWN RISK!!!${NOCOLOR}"
-echo -e "${YELLOW}PLEASE SELECT THE USB-DRIVE!${NOCOLOR}"
+echo -e "${RED}WARNING!!! SELECTING THE WRONG DISK MAY WIPE YOUR PC AND ALL DATA!!!${NOCOLOR}"
+echo -e "${YELLOW}\e[3mPLEASE SELECT THE USB-DRIVE!\e[0m${NOCOLOR}"
 select choice in "${lines[@]}"; do
-  [[ -n $choice ]] || { echo "Invalid choice. Please try again." >&2; continue; }
+  [[ -n $choice ]] || { echo "INVALID CHOICE. PLEASE TRY AGAIN." >&2; continue; }
 break # valid choice was made; exit prompt.
 done
 
 # Split the chosen line into ID and serial number.
 read -r id sn unused <<<"$choice"
  
-echo -e "${YELLOW}COPYING base.iso TO USB-DRIVE!${NOCOLOR}" 
+echo -e "\e[3mCOPYING base.iso TO USB-DRIVE!\e[0m" 
 dd bs=4M if=base.iso of=/dev/$id status=progress oflag=sync
-
-umount $(echo /dev/$id)2 || :
+umount $(echo /dev/$id)1 > /dev/null 2>&1 || : 
+umount $(echo /dev/$id)2 > /dev/null 2>&1 || : 
 sleep 5s
 
 rm -rf base.iso
 
 # Create EFI partition for clover or opencore
-fdisk /dev/$id <<EOF
-n
-2
-
-
-t
-2
-1
-
-w
-EOF
+(
+echo "n"
+echo "2"
+echo ""
+echo ""
+echo "t"
+echo "2"
+echo "1"
 sleep 5s
+echo "w") | fdisk /dev/$id > /dev/null 2>&1
+
+sleep 3s
 
 # Format the EFI partition for clover or opencore
 # and mount it in the /mnt 
-mkfs.fat -F 32 $(echo /dev/$id)2
-umount $(echo /dev/$id)2 || :
-mount -t vfat  $(echo /dev/$id)2 /mnt/ -o rw,umask=000
+mkfs.fat -F 32 $(echo /dev/$id)2 > /dev/null 2>&1
+mount -t vfat  $(echo /dev/$id)2 /mnt/ -o rw,umask=000 
 sleep 5s 
  
 # Install opencore
-echo -e "${YELLOW}INSTALLING OpenCore!!${NOCOLOR}"
+echo -e "\e[3mINSTALLING OpenCore!!\e[0m"
 sleep 3s
-wget https://files.amd-osx.com/OpenCore-0.5.2-RELEASE.zip
+wget https://files.amd-osx.com/OpenCore-0.5.2-RELEASE.zip > /dev/null 2>&1
 chmod +x OpenCore-0.5.2-RELEASE.zip
-unzip OpenCore-0.5.2-RELEASE.zip -d /mnt/
+unzip OpenCore-0.5.2-RELEASE.zip -d /mnt/ > /dev/null 2>&1
 sleep 5s
 rm -rf OpenCore-0.5.2-RELEASE.zip 
 umount $(echo /dev/$id)2 
 mount $(echo /dev/$id)2 /mnt
-echo -e "${YELLOW}INSTALLATION FINISHED, OPEN /mnt AND EDIT OC FOR YOUR MACHINE${NOCOLOR}"
+echo -e "\e[3mINSTALLATION FINISHED, OPEN /mnt AND EDIT OC FOR YOUR MACHINE!!\e[0m"
 
 # Special thanks to Scooby-Chan for helping writing the script and testing. 
 # and ill slap your face for testing as well.
