@@ -90,12 +90,14 @@ sleep 5s
 echo -e "\e[3mINSTALLING OpenCore!!\e[0m"
 sleep 3s
 wget https://files.amd-osx.com/OpenCore-0.5.2-RELEASE.zip > /dev/null 2>&1
-chmod +x OpenCore-0.5.2-RELEASE.zip
 unzip OpenCore-0.5.2-RELEASE.zip -d /mnt/ > /dev/null 2>&1
 sleep 5s
+chmod +x /mnt/
 rm -rf OpenCore-0.5.2-RELEASE.zip 
 umount $(echo /dev/$id)2 
-mount $(echo /dev/$id)2 /mnt
+mount $(echo /dev/$id)2 /mnt/
+sleep 3s
+
 echo -e "\e[3mINSTALLATION FINISHED, OPEN /mnt AND EDIT OC FOR YOUR MACHINE!!\e[0m"
 
 # Special thanks to Scooby-Chan for helping writing the script and testing. 
