@@ -13,19 +13,21 @@ echo -e "${RED}THIS SCRIPT MUST RUN AS ROOT${NOCOLOR}"
 exit 1
 fi
 # Installing dmg2img
+# for arch also wget and unzip
 echo -e "\e[3mWE NEED TO INSTALL SOME IMPORTANT TOOLS TO PROCEED!\e[0m"
 
 # Identifying distro
 source /etc/os-release
 
 if [[ $ID = "ubuntu" ]]; then
-apt install dmg2img > /dev/null 2>&1
+yes | apt install dmg2img
 
 elif [[ $ID = "fedora" ]]; then
-dnf install dmg2img > /dev/null 2>&1
+yes | dnf install dmg2img
 
-elif [[ $ID = "Arch Linux" ]]; then
-pacman -S dmg2img > /dev/null 2>&1
+elif [[ $ID = "arch" ]]; then
+yes | pacman -S dmg2img;yes | pacman -S unzip;yes | pacman -S wget
+
 else
 echo -e "${RED}YOUR DISTRO IS NOT SUPPORTED!!${NOCOLOR}"
 exit 1 
