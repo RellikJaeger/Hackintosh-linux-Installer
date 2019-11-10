@@ -33,7 +33,8 @@ exit 1
 fi
 
 # Extracting the iso file with dmg2img 
-cd macOS\ Downloads/publicrelease/
+cd "$(dirname "$(find ./ -name "publicrelease")")"
+cd publicrelease
 echo -e "${YELLOW}\e[3mPLEASE SELECT MACOS VERSION!\n\e[0m${NOCOLOR}"
 if select d in */; do test -n "$d" && break; echo ">>> Invalid Selection"; done
 then
