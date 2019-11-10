@@ -12,8 +12,7 @@ if [[ $EUID -ne 0 ]]; then
 echo -e "${RED}THIS SCRIPT MUST RUN AS ROOT${NOCOLOR}" 
 exit 1
 fi
-# Installing dmg2img
-# for arch also wget and unzip
+# Installing dmg2img + unzip
 echo -e "\e[3mWE NEED TO INSTALL SOME IMPORTANT TOOLS TO PROCEED!\e[0m"
 
 # Identifying distro
@@ -34,14 +33,15 @@ exit 1
 fi
 
 # Extracting the iso file with dmg2img 
-if cd "$(dirname "$(find ./ -name "BaseSystem.dmg")")"
-then echo -e "\e[3mEXTRACTING base.iso FROM BaseSystem.dmg!\e[0m"
-sleep 3s
-dmg2img BaseSystem.dmg base.iso 
-else 
-echo -e "${RED}BaseSystem.dmg NOT FOUND DOWNNLOAD IT AND TRY AGAIN!${NOCOLOR}"
+cd macOS\ Downloads/publicrelease/
+echo -e "${YELLOW}\e[3mPLEASE SELECT MACOS VERSION!\n\e[0m${NOCOLOR}"
+if select d in */; do test -n "$d" && break; echo ">>> Invalid Selection"; done
+then
+cd "$d" && dmg2img BaseSystem.dmg base.iso
+else
 exit 1
 fi
+
 
 # Print disk devices
 # Read command output line by line into array ${lines [@]}
