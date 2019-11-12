@@ -111,10 +111,9 @@ echo -e "\e[3mCopying base.iso to usb-drive!\e[0m"
 if
 dd bs=4M if=base.iso of=/dev/$id status=progress oflag=sync
 then
-  umount $(echo /dev/$id?*) > /dev/null 2>&1 || :
+  umount $(echo /dev/$id?*) > /dev/null 2>&1 || :; sleep 3s
 else
   exit 1
-  sleep 5s
 fi
 
 partition
@@ -124,10 +123,9 @@ partition
 if
 mkfs.fat -F 32 $(echo /dev/$id)2 > /dev/null 2>&1;progressbar
 then
-  mount -t vfat  $(echo /dev/$id)2 /mnt/ -o rw,umask=000
+  mount -t vfat  $(echo /dev/$id)2 /mnt/ -o rw,umask=000; sleep 3s
 else
   exit 1
-  sleep 5s
 fi
 
 # Install opencore
