@@ -80,8 +80,8 @@
    Now download your kexts here:    
    https://onedrive.live.com/?authkey=%21APjCyRpzoAKp4xs&id=FE4038DA929BFB23%21455036&cid=FE4038DA929BFB23    
    Place your kexts in /EFI/CLOVER/kexts/other   
-   To know what kexts you need check this link:  
-        https://vanilla.amd-osx.com/setting-up-clover-for-amd-vanilla/kexts.html
+   To know what kexts you need check this link:    
+        https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/gathering-kexts  
 
    You will also need [AppleMCEReporterDisabler.kext](https://github.com/AMD-OSX/AMD_Vanilla/raw/master/Extra/AppleMCEReporterDisabler.kext.zip) on Catalina too.
         
