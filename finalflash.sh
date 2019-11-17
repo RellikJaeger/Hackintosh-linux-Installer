@@ -9,25 +9,11 @@ RED="\033[1;31m"
 NOCOLOR="\033[0m"
 YELLOW="\033[01;33m"
 set -e
-progressbar (){
-  for ((k = 0; k <= 10 ; k++))
-  do
-    echo -n "[ "
-    for ((i = 0 ; i <= k; i++)); do echo -n "###"; done
-    for ((j = i ; j <= 10 ; j++)); do echo -n "   "; done
-    v=$((k * 10))
-    echo -n " ] "
-    echo -n "$v %" $'\r'
-    sleep 0.05
-  done
-  echo
-}
-
 func1 (){
   if
-  wget https://files.amd-osx.com/OpenCore-0.5.2-RELEASE.zip > /dev/null 2>&1;progressbar
+  wget https://files.amd-osx.com/OpenCore-0.5.2-RELEASE.zip
   then
-    unzip OpenCore-0.5.2-RELEASE.zip -d /mnt/ > /dev/null 2>&1;progressbar
+    unzip OpenCore-0.5.2-RELEASE.zip -d /mnt/
   else
     echo -e "${RED}Something went wrong!!!${NOCOLOR}"
   fi
@@ -42,16 +28,21 @@ func1 (){
 partition (){
   # Create EFI partition for clover or opencore
   (
-  echo "n"
-  echo "2"
-  echo ""
-  echo ""
-  echo "t"
-  echo "2"
-  echo "1"
-  sleep 5s
-  echo "w") | fdisk /dev/$id > /dev/null 2>&1;progressbar
-  sleep 3s
+    echo "x"
+    echo "e"
+    echo "w"
+    echo "y") | gdisk /dev/$id
+  (
+    echo "n"
+    echo "2"
+    echo ""
+    echo ""
+    echo "t"
+    echo "2"
+    echo "1"
+    sleep 3s
+    echo "w") | fdisk /dev/$id
+    sleep 3s
 }
 # Checking for root
 if [[ $EUID -ne 0 ]]; then
@@ -65,13 +56,13 @@ sleep 3s
 source /etc/os-release
 
 if [[ $ID = "ubuntu" ]]; then
-  yes | apt install dmg2img > /dev/null 2>&1;progressbar
+  yes | apt install dmg2img
 
 elif [[ $ID = "fedora" ]]; then
-  yes | dnf install dmg2img > /dev/null;progressbar
+  yes | dnf install dmg2img
 
 elif [[ $ID = "arch" ]]; then
-  yes | pacman -S dmg2img;yes | pacman -S unzip;yes | pacman -S wget > /dev/null 2>&1;progressbar
+  yes | pacman -S dmg2img;yes | pacman -S unzip;yes | pacman -S wget
 
 else
   echo -e "${RED}YOUR DISTRO IS NOT SUPPORTED!!${NOCOLOR}"
@@ -111,7 +102,7 @@ echo -e "\e[3mCopying base.iso to usb-drive!\e[0m"
 if
 dd bs=4M if=base.iso of=/dev/$id status=progress oflag=sync
 then
-  umount $(echo /dev/$id?*) > /dev/null 2>&1 || :; sleep 3s
+  umount $(echo /dev/$id?*)  || :; sleep 3s
 else
   exit 1
 fi
@@ -121,7 +112,7 @@ partition
 # Format the EFI partition for clover or opencore
 # and mount it in the /mnt
 if
-mkfs.fat -F 32 $(echo /dev/$id)2 > /dev/null 2>&1;progressbar
+mkfs.fat -F 32 -n EFI $(echo /dev/$id)2
 then
   mount -t vfat  $(echo /dev/$id)2 /mnt/ -o rw,umask=000; sleep 3s
 else
