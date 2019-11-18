@@ -58,10 +58,19 @@ source /etc/os-release
 if [[ $ID = "ubuntu" ]]; then
   yes | apt install dmg2img
 
+elif [[ $ID = "linuxmint" ]]; then
+  yes | apt install dmg2img
+
+elif [[ $ID = "debian" ]]; then
+    yes | apt-get install dmg2img;yes | apt-get install unzip;yes | apt-get install wget
+
 elif [[ $ID = "fedora" ]]; then
   yes | dnf install dmg2img
 
 elif [[ $ID = "arch" ]]; then
+  yes | pacman -S dmg2img;yes | pacman -S unzip;yes | pacman -S wget
+
+elif [[ $ID = "manjaro" ]]; then
   yes | pacman -S dmg2img;yes | pacman -S unzip;yes | pacman -S wget
 
 else
