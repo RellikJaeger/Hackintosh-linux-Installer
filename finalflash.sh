@@ -2,8 +2,10 @@
 # Autor: Broly
 # License: GNU General Public License v3.0
 # https://www.gnu.org/licenses/gpl-3.0.txt
-# This script is inteded to be a linux version of 'Makeinstall.py" there for it should be executerd
-# from same directory /home/user/Downloads/gibMacOS-master/
+# This script is inteded to create a opencore usb-installer on linux just like 
+#'Makeinstall.py" does on windows there for it should be executerd
+# from /gibMacOS-master/ directory.
+# dependence gibmacos https://github.com/corpnewt/gibMacOS
 
 RED="\033[1;31m"
 NOCOLOR="\033[0m"
@@ -134,5 +136,6 @@ sleep 3s
 func1
 echo -e "\e[3mInstallation finished, open /mnt and edit oc for your machine!!\e[0m"
 
-# Special thanks to Scooby-Chan for helping writing the script and testing.
+# Special thanks to CorpNewt for awsome tool gibmacos
+# Scooby-Chan for helping writing the script and testing.
 # and ill slap your face for testing as well.
