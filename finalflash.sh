@@ -5,7 +5,7 @@
 # This script is inteded to create a opencore usb-installer on linux just like 
 #'Makeinstall.py" does on windows there for it should be executerd
 # from /gibMacOS-master/ directory.
-# dependence gibmacos https://github.com/corpnewt/gibMacOS
+# dependency gibmacos https://github.com/corpnewt/gibMacOS
 
 RED="\033[1;31m"
 NOCOLOR="\033[0m"
