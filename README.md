@@ -1,6 +1,10 @@
-# Welcome to AMD OS X Vanilla Made On Linux
+# Welcome to Hackintosh Vanilla Made On Linux
 
+## For automated script  
+Use tribeam.  
+https://github.com/Broly1/tribeam
 
+## For manual instalation read this.
 ## Tools you'll need :
  GNOME Disks is a graphical front-end for udisks included in the "gnome-disk-utility" package.  
  GParted is a free partition editor for graphically managing your disk partitions.  
