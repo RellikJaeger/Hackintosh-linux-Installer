@@ -1,4 +1,4 @@
-# Welcome to Hackintosh Vanilla Made On Linux
+# How To Created a Vanilla Hackintosh USB-Installer using Linux
 
 ## For automated instalation:
 Use tribeam.sh script    
