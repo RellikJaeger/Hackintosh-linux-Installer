@@ -1,7 +1,7 @@
 # Welcome to Hackintosh Vanilla Made On Linux
 
-## For automated script  
-Use tribeam.  
+## For automated instalation:
+Use tribeam.sh script    
 https://github.com/Broly1/tribeam
 
 ## For manual instalation read this.
