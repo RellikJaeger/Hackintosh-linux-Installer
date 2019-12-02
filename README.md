@@ -13,7 +13,7 @@ https://github.com/Broly1/tribeam
  The Vanilla AMD config courtesy of AlGrey ( https://github.com/AMD-OSX/AMD_Vanilla )  
  A USB drive 8gb+  
  Some patience...
-## This guide will support the following versions of macOS on Zen and 15H/16H AMD:  
+## This guide will support the following versions of macOS:  
 
 ### High Sierra 10.13.6 (17G65, 17G66, 17G8030, 17G8037)  
 ### Mojave 10.14.6 (18G84, 18G87, 18G95, 18G103)  
