@@ -1,11 +1,11 @@
 # How To Creat a Vanilla Hackintosh USB-Installer using Linux.  
 
-## For automated installation:
+### For automated installation:
 ***Use tribeam.sh script           
 https://github.com/Broly1/tribeam***
 
-## For manual instalation read this.
-## Tools you'll need :
+### For manual instalation read this.
+### Tools you'll need :
  GNOME Disks is a graphical front-end for udisks included in the "gnome-disk-utility" package.  
  GParted is a free partition editor for graphically managing your disk partitions.  
  DMG2IMG comand line tool that allows you to convert a (compressed) Apple Disk Images  
@@ -13,13 +13,13 @@ https://github.com/Broly1/tribeam***
  The Vanilla AMD config courtesy of AlGrey ( https://github.com/AMD-OSX/AMD_Vanilla )  
  A USB drive 8gb+  
  Some patience...
-## This guide will support the following versions of macOS:  
+### This guide will support the following versions of macOS:  
 
 ### High Sierra 10.13.6 (17G65, 17G66, 17G8030, 17G8037)  
 ### Mojave 10.14.6 (18G84, 18G87, 18G95, 18G103)  
 ### Catalina 10.15.1 (19A583, 19A602)  
   
-  ## Get macOS Installer with gibMacOS  
+  ### Get macOS Installer with gibMacOS  
   Downloading the installer files fairly straight forward process but may take a while depending on your internet speeds.  
   To start extract gibMacOS and and open your terminal change directory to the gibmacos.command script.  
   Run it with `./gibMacOS.command `   
@@ -29,7 +29,7 @@ https://github.com/Broly1/tribeam***
   In my case I chose option 1. It will download the macOS installer files.  
   Make sure that BaseSystem.dmg is downloaded completely thats what we will use to create the installer  
   Once downloaded you can proceed to the next step.  
-  ## Creating the macOS Install USB  
+  ### Creating the macOS Install USB  
   Find BaseSystem.dmg inside `/gibMacOS-master/macOS\ Downloads/publicrelease/`  
   Drag it to your desktop or somewhere else if you prefer.  
   Open your terminal and change directory to where the BaseSystem.dmg file is in my case:  
@@ -66,20 +66,20 @@ https://github.com/Broly1/tribeam***
        
    <img src="pict/2019-09-11_12-19.png" width=700>  
         
-   ## Installing Clover  
+   ### Installing Clover  
        
    ***Download CloverISO-xx.tar.lzma***      
       https://github.com/CloverHackyColor/CloverBootloader/releases  
    Extract it then extract the iso as well and copy the EFI folder to the empty EFI partition    
    <img src="pict/2019-09-11_12-26.png" width=700>  
         
-   ## Drivers  
+   ### Drivers  
    Now open EFI/CLOVER/drivers/UEFI and all we need there are:    
    ApfsDriverLoader.efi AptioMemoryFix.efi HFSPlus.efi    
    <img src="pict/2019-09-11_12-28.png" width=700>
         
         
-   ## Kexts  
+   ### Kexts  
         
    Now download your kexts here:    
    https://onedrive.live.com/?authkey=%21APjCyRpzoAKp4xs&id=FE4038DA929BFB23%21455036&cid=FE4038DA929BFB23    
