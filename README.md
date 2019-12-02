@@ -15,9 +15,9 @@ https://github.com/Broly1/tribeam
  Some patience...
 ## This guide will support the following versions of macOS on Zen and 15H/16H AMD:  
 
-### High Sierra 10.13.6 (17G65, 17G66, 17G8030)  
-### Mojave 10.14.6 (18G84, 18G87, 18G95)  
-### Catalina 10.15 (19A583)
+### High Sierra 10.13.6 (17G65, 17G66, 17G8030, 17G8037)  
+### Mojave 10.14.6 (18G84, 18G87, 18G95, 18G103)  
+### Catalina 10.15.1 (19A583, 19A602)  
   
   ## Get macOS Installer with gibMacOS  
   Downloading the installer files fairly straight forward process but may take a while depending on your internet speeds.  
