@@ -9,8 +9,7 @@ https://github.com/Broly1/tribeam***
  GNOME Disks is a graphical front-end for udisks included in the "gnome-disk-utility" package.  
  GParted is a free partition editor for graphically managing your disk partitions.  
  DMG2IMG comand line tool that allows you to convert a (compressed) Apple Disk Images  
- gibMacOS - An awesome tool from CorpNewt ( https://github.com/corpnewt/gibMacOS )  
- The Vanilla AMD config courtesy of AlGrey ( https://github.com/AMD-OSX/AMD_Vanilla )  
+ gibMacOS - An awesome tool from CorpNewt ( https://github.com/corpnewt/gibMacOS )   
  A USB drive 8gb+  
  Some patience...
 ### This guide will support the following versions of macOS:  
