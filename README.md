@@ -1,6 +1,6 @@
 # How To Creat a Vanilla Hackintosh USB-Installer using Linux.  
 
-### For automated installation:
+### For OpenCore installers:  
 ***Use tribeam.sh script           
 https://github.com/Broly1/tribeam***
 
