@@ -12,11 +12,11 @@ https://github.com/Broly1/tribeam***
  gibMacOS - An awesome tool from CorpNewt ( https://github.com/corpnewt/gibMacOS )   
  A USB drive 8gb+  
  Some patience...
-### This guide will support the following versions of macOS:  
-
-### High Sierra 10.13.6 (17G65, 17G66, 17G8030, 17G8037)  
-### Mojave 10.14.6 (18G84, 18G87, 18G95, 18G103)  
-### Catalina 10.15.1 (19A583, 19A602)  
+  
+  ### Supported macOS versions
+  - High Sierra 10.13.x
+  - Mojave 10.14.x
+  - Catalina 10.15.x
   
   ### Get macOS Installer with gibMacOS  
   Downloading the installer files fairly straight forward process but may take a while depending on your internet speeds.  
