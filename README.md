@@ -1,4 +1,4 @@
-# How To Creat a Vanilla Hackintosh USB-Installer using Linux.  
+# Hackintosh USB-Installer using Linux    
 
   ### Supported macOS versions
   - High Sierra 10.13.x
