@@ -106,10 +106,18 @@ https://github.com/Broly1/tribeam***
    https://github.com/corpnewt/Hackintosh-Guide   
         
    ***Make sure to learn the basics of config.plist***  
-   https://github.com/corpnewt/Hackintosh-Guide/blob/master/config.plist-basics.md   
+   https://github.com/corpnewt/Hackintosh-Guide/blob/master/config.plist-basics.md  
+   
+   ### GibMacOS + finalflash.sh  
+   Alternativelly if you prefere to use GibMacOS instead of ``tribeam.sh`` but don't want  
+   to partition manually you can use ``finalflash.sh`` script which will use either    
+   the Recovery.pkg or the BaseSystem.dmg, just drop it inside GibMacOS after downloading the desired  
+   version of macOS and run it from there fallowing the prompt.    
+   https://github.com/Broly1/finalflash  
+   <img src="pict/final.png" width=700>
         
   This shoud be enough to boot into the installer GOOD Luck!!  
 
         
    ## All Credits to:
-   **CorpNewt algrey Shannee XLNC.**        
+   **CorpNewt algrey Hackintosh Slav and many others**        
