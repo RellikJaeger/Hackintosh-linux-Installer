@@ -1,6 +1,12 @@
 # How To Creat a Vanilla Hackintosh USB-Installer using Linux.  
 
-### For OpenCore EFI installers:  
+  ### Supported macOS versions
+  - High Sierra 10.13.x
+  - Mojave 10.14.x
+  - Catalina 10.15.x
+  
+
+### For OpenCore EFI installers  
 ***Use tribeam.sh script           
 https://github.com/Broly1/tribeam***
     
@@ -21,11 +27,7 @@ https://github.com/Broly1/tribeam***
  A USB drive 8gb+  
  Some patience...
   
-  ### Supported macOS versions
-  - High Sierra 10.13.x
-  - Mojave 10.14.x
-  - Catalina 10.15.x
-  
+
   ### Get macOS Installer with gibMacOS  
   Downloading the installer files fairly straight forward process but may take a while depending on your internet speeds.  
   To start extract gibMacOS and and open your terminal change directory to the gibmacos.command script.  
