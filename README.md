@@ -6,16 +6,16 @@
   - Catalina 10.15.x
   
 
-# For OpenCore EFI installers  
-***Use tribeam.sh script           
-https://github.com/Broly1/tribeam***
+**For OpenCore EFI installers**   
+  Use tribeam.sh script           
+  ***https://github.com/Broly1/tribeam***
     
-   ***GibMacOS + finalflash.sh***  
+   **GibMacOS + finalflash.sh**   
    Alternativelly if you prefere to use GibMacOS instead of ``tribeam.sh`` but don't want  
    to partition manually you can use ``finalflash.sh`` script which will use either    
    the Recovery.pkg or the BaseSystem.dmg, just drop it inside GibMacOS after downloading the desired  
    version of macOS and run it from there fallowing the prompt.    
-   https://github.com/Broly1/finalflash 
+   ***https://github.com/Broly1/finalflash*** 
    <img src="pict/final.png" width=700>
         
 ### For manual instalation read this.
