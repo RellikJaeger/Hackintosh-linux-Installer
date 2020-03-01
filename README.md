@@ -64,9 +64,16 @@ https://github.com/Broly1/tribeam***
    Now you should see an empty EFI partition in your file system  
        
    <img src="pict/2019-09-11_12-19.png" width=700>  
-        
-   ### Installing Clover  
-       
+   
+   ### For OpenCore  
+   
+   ***Download OpenCore-x.x.x-RELEASE.zip***      
+   https://github.com/acidanthera/OpenCorePkg/releases  
+   Extract it and drop OpenCore EFI folder in the EFI partition we just created  
+   and fallow the OpenCore Vanilla Guide.    
+   https://khronokernel-2.gitbook.io/opencore-vanilla-desktop-guide/   
+   
+   ### For Clover       
    ***Download CloverISO-xx.tar.lzma***      
       https://github.com/CloverHackyColor/CloverBootloader/releases  
    Extract it then extract the iso as well and copy the EFI folder to the empty EFI partition    
