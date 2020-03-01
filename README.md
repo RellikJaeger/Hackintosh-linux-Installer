@@ -6,7 +6,7 @@
   - Catalina 10.15.x
   
 
-### For OpenCore EFI installers  
+# For OpenCore EFI installers  
 ***Use tribeam.sh script           
 https://github.com/Broly1/tribeam***
     
