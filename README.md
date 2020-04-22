@@ -80,8 +80,8 @@
    ***Download OpenCore-x.x.x-RELEASE.zip***      
    https://github.com/acidanthera/OpenCorePkg/releases  
    Extract it and drop OpenCore EFI folder in the EFI partition we just created  
-   and fallow the OpenCore Vanilla Guide.    
-   https://khronokernel-2.gitbook.io/opencore-vanilla-desktop-guide/   
+   and fallow the OpenCore Vanilla Guide.      
+   https://dortania.github.io/OpenCore-Desktop-Guide/     
    
    ### For Clover       
    ***Download CloverISO-xx.tar.lzma***      
@@ -102,11 +102,9 @@
    Place your kexts in /EFI/CLOVER/kexts/other   
    To know what kexts you need check this link:    
         https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/gathering-kexts  
-
-   You will also need [AppleMCEReporterDisabler.kext](https://github.com/AMD-OSX/AMD_Vanilla/raw/master/Extra/AppleMCEReporterDisabler.kext.zip) on Catalina too.
         
    ***This is how my kexts folder looks like***    
-   <img src="pict/2019-09-11_12-31.png" width=700>   
+   <img src="pict/2019-09-11_12-31.png" width=700>     
         
    You should have a sample `config.plist` inside /EFI/CLOVER remove it.  
     If on amd cpu get your sample config.plist here:  
