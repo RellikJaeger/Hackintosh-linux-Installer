@@ -11,10 +11,34 @@
   ***https://github.com/Broly1/tribeam***
     
    **GibMacOS + finalflash.sh**   
-   Alternativelly if you prefere to use GibMacOS instead of ``tribeam.sh`` 
-   you can use ``finalflash.sh`` script which will use either      
-   the Recovery.pkg or the BaseSystem.dmg, just drop it inside GibMacOS after downloading the desired  
-   version of macOS and run it from there fallowing the prompt.    
+   Alternativelly if you prefere to use GibMacOS instead of ``tribeam.sh``   
+   you may have to change the python path of ``gibMacOS.command`` from ``#!/usr/bin/env python`` to ``#!/usr/bin/env python3``  
+   for it to work, then run ``./gibMacOS.command`` press ``R`` to select recovery only     
+   then Download the desired version of macOS, once done, Download ``finalflash.sh``  
+   Extract it and paste it in the same directry as ``gibMacOS.command`` and change its permissions  
+   ``chmod +x finalflash.sh`` then run it as root ``sudo ./finalflash.sh`` it will show you a menu eg:    
+``Please select the usb-drive!``  
+``1) sda  223.6G``  
+``2) sdb  465.8G``  
+``3) sdc  931.5G``  
+``4) sdd   14.9G``  
+``#? ``  
+In this example `4` is my usb drive so type `4` then it will install some necessary packages    
+7zip wget and curl and a prompt a menu to select the macOS image eg:  
+``Please select the downloaded macOS image!``  
+``1) 001-12341 - 10.15.5 macOS Catalina 10.15.5 Update/``  
+``2) 041-91758 - 10.13.6 macOS High Sierra/``  
+``#?``  
+For this example type in ``1`` for Catalina or ``2`` for High Sierra  
+Then wait for it to create the installer with OpenCore, once done, the EFI partition     
+will be mounted at the ``/mnt`` directory for you to edit it,  
+To config the ``config.plist`` you can use ``ProperTree.command``   
+https://github.com/corpnewt/ProperTree  
+Just like ``gibMacOS.command`` you may have to change the python path of ``ProperTree.command`` from ``#!/usr/bin/env python``  
+ to ``#!/usr/bin/env python3`` and install ``python3-tk`` for it to work  
+ eg for ubuntu ``sudo apt install python3-tk``  
+ this should get you going good luck.  
+    
    ***https://github.com/Broly1/finalflash***  
    ***https://github.com/corpnewt/gibMacOS***   
    <img src="pict/final.png" width=700>
