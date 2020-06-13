@@ -145,4 +145,4 @@ Just like ``gibMacOS.command`` you may have to change the python path of ``Prope
 
         
    ## Credits to:
-   **CorpNewt algrey Hackintosh Slav and many others**        
+   **Scooby-Chan CorpNewt algrey Hackintosh Slav and many others**        
