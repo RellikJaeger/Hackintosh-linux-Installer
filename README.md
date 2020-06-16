@@ -17,7 +17,8 @@
    you may have to change the python path of ``gibMacOS.command`` from ``#!/usr/bin/env python`` to ``#!/usr/bin/env python3``  
    for it to work, then run ``./gibMacOS.command`` press ``R`` to select recovery only     
    then Download the desired version of macOS, once done, Download ``finalflash.sh``  
-   Extract it and paste it in the same directry as ``gibMacOS.command`` and change its permissions  
+   Extract it and paste it in the same directry as ``gibMacOS.command`` like in the picture bellow  
+   and change its permissions    
    ``chmod +x finalflash.sh`` then run it as root ``sudo ./finalflash.sh`` it will show you a menu eg:    
 ``Please select the usb-drive!``  
 ``1) sda  223.6G``  
