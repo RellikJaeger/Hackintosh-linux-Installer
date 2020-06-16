@@ -11,6 +11,8 @@
   ***https://github.com/Broly1/tribeam***
     
    **GibMacOS + finalflash.sh**   
+   ***https://github.com/Broly1/finalflash***    
+   ***https://github.com/corpnewt/gibMacOS***   
    Alternativelly if you prefere to use GibMacOS instead of ``tribeam.sh``   
    you may have to change the python path of ``gibMacOS.command`` from ``#!/usr/bin/env python`` to ``#!/usr/bin/env python3``  
    for it to work, then run ``./gibMacOS.command`` press ``R`` to select recovery only     
@@ -37,11 +39,10 @@ https://github.com/corpnewt/ProperTree
 Just like ``gibMacOS.command`` you may have to change the python path of ``ProperTree.command`` from ``#!/usr/bin/env python``  
  to ``#!/usr/bin/env python3`` and install ``python3-tk`` for it to work  
  eg for ubuntu ``sudo apt install python3-tk``  
- this should get you going good luck.  
+ this should get you going good luck.    
     
-   ***https://github.com/Broly1/finalflash***  
-   ***https://github.com/corpnewt/gibMacOS***   
-   <img src="pict/final.png" width=700>
+  
+   <img src="pict/final.png" width=700>  
         
 ### For manual instalation read this.
 ### Tools you'll need :
